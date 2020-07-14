@@ -1,3 +1,4 @@
+import 'package:components/src/pages/alert_page.dart';
 import 'package:components/src/utils/icono_string_util.dart';
 import 'package:flutter/material.dart';
 
@@ -20,13 +21,13 @@ class HomePage extends StatelessWidget {
       initialData: [],
       builder: (BuildContext context, AsyncSnapshot<List<dynamic>> snapshot ) {
         return ListView(
-          children: _listItems( snapshot.data ),
+          children: _listItems( snapshot.data, context ),
         );
       },
     );
   }
 
-  List<Widget> _listItems( List<dynamic> data) {
+  List<Widget> _listItems( List<dynamic> data, BuildContext context) {
     final List<Widget> options = [];
 
     data.forEach((element) {
@@ -34,7 +35,13 @@ class HomePage extends StatelessWidget {
         title: Text(element['texto']),
         leading: getIcon(element['icon']),
         trailing: Icon(Icons.keyboard_arrow_right , color: Colors.blue,),
-        onTap: (){ },
+        onTap: (){
+          final route = MaterialPageRoute(
+            builder: (context) => AlertPage(),
+          );
+
+          Navigator.push(context, route);
+        },
       );
 
       options..add(widgetTemp)
