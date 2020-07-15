@@ -11,6 +11,8 @@ class CardPage extends StatelessWidget {
         padding: EdgeInsets.all(10.0),
         children: <Widget>[
           _cardTipo1(),
+          SizedBox(height: 30.0,),
+          _cardTipo2(),
         ],
       ),
     );
@@ -38,6 +40,29 @@ class CardPage extends StatelessWidget {
               ),
             ],
           ),
+        ],
+      ),
+    );
+  }
+
+  Widget _cardTipo2() {
+    return Card(
+      child: Column(
+        children: <Widget> [
+          FadeInImage(
+            image: NetworkImage('https://www.publicdomainpictures.net/pictures/120000/velka/forest-landscape-1432920247hd5.jpg'),
+            placeholder: AssetImage('assets/jar-loading.gif'),
+            fadeInDuration: Duration( milliseconds: 200 ),
+            height: 300.0,
+            fit: BoxFit.cover,
+          ),
+//          Image(
+//            image: NetworkImage('https://www.publicdomainpictures.net/pictures/120000/velka/forest-landscape-1432920247hd5.jpg'),
+//          ),
+          Container(
+            padding: EdgeInsets.all(10.0),
+            child: Text('Some text in here.'),
+          )
         ],
       ),
     );
