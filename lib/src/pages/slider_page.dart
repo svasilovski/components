@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 
-class sliderPage extends StatefulWidget {
+class SliderPage extends StatefulWidget {
   @override
-  _sliderPageState createState() => _sliderPageState();
+  _SliderPageState createState() => _SliderPageState();
 }
 
-class _sliderPageState extends State<sliderPage> {
+class _SliderPageState extends State<SliderPage> {
   double _sliderValue = 125.0;
   bool _checkBlock = false;
 
